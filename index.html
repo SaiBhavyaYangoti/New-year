@@ -65,8 +65,8 @@
         .container {
             display: none; /* Initially hidden */
             text-align: center;
-            width: 90%; /* Ensures responsiveness on smaller screens */
-            max-width: 800px; /* Restricts the maximum width */
+            width: 90%;
+            max-width: 800px;
             background-color: white;
             border-radius: 10px;
             padding: 20px;
@@ -75,14 +75,29 @@
         }
 
         .video {
-            width: 60%; /* Scales the video to fit the container */
+            width: 90%; /* Scales the video to fit most of the screen */
+            max-width: 500px;
+            height: auto; /* Maintains aspect ratio */
             border-radius: 10px;
         }
 
         .message {
-            margin-top: 20px;
-            font-size: 10px;
-            line-height: 1.0;
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .new-year-message {
+                font-size: 1.8em;
+            }
+            .video {
+                width: 100%; /* Make video fill most of the screen on mobile */
+            }
+            .message {
+                font-size: 14px; /* Smaller message text for mobile */
+            }
         }
     </style>
 </head>
