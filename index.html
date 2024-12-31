@@ -75,7 +75,7 @@
         }
 
         .video {
-            width: 50%; /* Scales the video to fit the container */
+            width: 100%; /* Scales the video to fit the container */
             border-radius: 10px;
         }
 
@@ -90,7 +90,7 @@
     <div class="new-year-message">🎉 Happy New Year! 🎉</div>
     <button class="button" onclick="revealWishes()">Unwrap Your New Year Surprise!</button>
     <div class="container" id="wishes-container">
-        <video class="video" controls>
+        <video class="video" id="newYearVideo" autoplay>
             <source src="Mom and dad.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -101,7 +101,10 @@
         function revealWishes() {
             document.querySelector('.new-year-message').style.display = 'none';
             document.querySelector('.button').style.display = 'none';
-            document.getElementById('wishes-container').style.display = 'block';
+            const container = document.getElementById('wishes-container');
+            const video = document.getElementById('newYearVideo');
+            container.style.display = 'block';
+            video.play(); // Start playing the video automatically
         }
     </script>
 </body>
